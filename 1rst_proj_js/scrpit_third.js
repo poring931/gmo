@@ -35,19 +35,25 @@ function chooseExpenses() {
 }
 chooseExpenses();
 
-appData.moneyPerDay =(appData.budget / 30).toFixed();
+function detectDayBudget() {
+    appData.moneyPerDay =(appData.budget / 30).toFixed();
+    console.log(appData.moneyPerDay);
+}
+
 
 alert("Ежедневный бюджет: " + appData.moneyPerDay);
-
-if(appData.moneyPerDay < 100 ) {
-    console.log("минимальный уровень достатка");
-} else if (appData.moneyPerDay > 100 && appData.moneyPerDay < 2000) {
-    console.log('Средний достаток');
-} else if (appData.moneyPerDay > 2000) {
-    console.log('Высокий уровень достатка');
-} else {
-    console.log('Ошибка');
+function detectLevel() {
+    if(appData.moneyPerDay < 100 ) {
+        console.log("минимальный уровень достатка");
+    } else if (appData.moneyPerDay > 100 && appData.moneyPerDay < 2000) {
+        console.log('Средний достаток');
+    } else if (appData.moneyPerDay > 2000) {
+        console.log('Высокий уровень достатка');
+    } else {
+        console.log('Ошибка');
+    }
 }
+
 function checkSavings() {
     if (appData.savings == true) {
         let save = +prompt('Какова сумма накоплений?'),
@@ -55,6 +61,12 @@ function checkSavings() {
         appData.montIncome = save / 100 / 12 * percent;
         alert('Доход в месяц с вашего депозита:' + appData.montIncome );
     }
+}
+function chooseOptExpenses() {
+    appData.optionalExpenses.a = prompt('Статья необяз расходжов');
+    appData.optionalExpenses.b= prompt('Статья необяз расходжов');
+    appData.optionalExpenses.c = prompt('Статья необяз расходжов');
+
 }
 
 checkSavings();
