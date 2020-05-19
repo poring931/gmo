@@ -56,3 +56,25 @@ console.log(arr2);
 let arr32 = ['asqwe', 'asdasd', 'asdsswww', 'wewqqq'],
     i2 = arr32.join(', ');
 console.log(i2);
+
+let mac = [1, 4, 5, 23];
+let sor = mac.sort(compareNum);
+function compareNum(a,b) {
+    return a-b;
+}
+
+console.log(sor);
+
+let soldier = {
+    health: 400,
+    armor: 200
+};
+
+let john = {
+    health: 100
+};
+
+john.__proto__ = soldier;
+
+console.log(john);
+console.log(john.armor);
