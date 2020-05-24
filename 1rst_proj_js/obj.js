@@ -76,5 +76,27 @@ let john = {
 
 john.__proto__ = soldier;
 
-console.log(john);
-console.log(john.armor);
+function checkAge(age) {
+
+    // return (age > 18) || console.log('Родители разрешили?');
+    return (age > 18) ? true : console.log('Родители разрешили?');
+
+}
+checkAge(12);
+
+function returnMin(a, b) {
+    return (a>b) ? console.log(b) : console.log(a);
+
+}
+
+returnMin(22, 2);
+function pow(x,n) {
+    let res = x;
+    for (let i = 1; i < n; i ++) {
+        res = x * res;
+       // console.log(res);
+    }
+    return console.log(res);
+}
+
+pow(2, 10);
