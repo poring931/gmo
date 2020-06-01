@@ -100,3 +100,51 @@ function pow(x,n) {
 }
 
 pow(2, 10);
+console.log('-------------------------------------------------------------------------');
+
+class User2 {
+    constructor(name, id){
+        this.name = name;
+        this.id = id;
+        this.human = true;
+    }
+
+    hello () {
+        console.log('Hello, my name is ' + this.name)
+    }
+
+    exit() {
+        console.log('Пользователь ' + this.name + ' ушел');
+    }
+}
+
+let ivan2 = new User2('Ivanich', 23123123),
+    alex2 = new User2('Alex', 2);
+console.log(ivan2);
+console.log(alex2);
+ivan2.hello();
+ivan2.exit();
+
+console.log('-------------------------------------------------------------------------');
+
+function User(name, id) {
+    this.name = name;
+    this.id = id;
+    this.human = true;
+    this.hello = function () {
+        console.log('Hello, my name is ' + this.name)
+    }
+}
+
+User.prototype.exit = function (name) {
+    console.log('Пользователь ' + this.name + ' ушел');
+};
+
+let ivan = new User('Ivanich', 23123123),
+    alex = new User('Alex', 2);
+console.log(ivan);
+console.log(alex);
+ivan.hello();
+ivan.exit();
+
+
