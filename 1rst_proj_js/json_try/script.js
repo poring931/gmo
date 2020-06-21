@@ -7,3 +7,5 @@ let options = {
         color: '#fff'
     }
 };
+console.log(JSON.stringify(options));
+console.log(JSON.parse(JSON.stringify(options)));
